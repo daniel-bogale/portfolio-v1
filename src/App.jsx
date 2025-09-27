@@ -15,11 +15,11 @@ import ProfessionalCard from "./components/ProfessionalCard";
 function App() {
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div className="relative bg-primary">
         {/* Hero Section */}
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center relative">
           <div className="absolute inset-0 bg-black/20"></div>
-          <div className="relative z-10">
+          <div className="relative ">
             <Navbar />
             <Hero />
           </div>
@@ -35,7 +35,7 @@ function App() {
           <Feedbacks />
         </main>
 
-        <div className="relative z-0">
+        <div className="relative">
           <Contact />
           <StarsCanvas />
         </div>

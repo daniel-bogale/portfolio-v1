@@ -65,16 +65,14 @@ const Hero = () => {
           <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
-        <div
-          className={`${styles.paddingX} relative z-10 max-w-7xl mx-auto w-full`}
-        >
+        <div className={`${styles.paddingX} relative max-w-7xl mx-auto w-full`}>
           <div className="grid lg:grid-cols-2 gap-8 items-center pt-20">
             <div className="space-y-6">
               <div>
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
+                  transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
                   className="space-y-2"
                 >
                   <p className="text-purple-400 text-lg font-medium flex items-center gap-2">
@@ -85,7 +83,11 @@ const Hero = () => {
                     <motion.span
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.6, delay: 0.3 }}
+                      transition={{
+                        duration: 0.45,
+                        delay: 0.18,
+                        ease: [0.4, 0, 0.2, 1],
+                      }}
                       className="block text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-clip-text pb-2 md:pb-3 lg:pb-4 leading-[1.3]"
                     >
                       Bogale
@@ -95,13 +97,17 @@ const Hero = () => {
 
                 {/* Role & Description */}
                 <motion.div
-                  initial={{ opacity: 0, y: 30 }}
+                  initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.1,
+                    ease: [0.4, 0, 0.2, 1],
+                  }}
                   className="space-y-3"
                 >
                   <h2 className="text-xl lg:text-2xl font-semibold text-gray-300">
-                    Senior Software Developer & Tech Lead
+                    Senior Software Developer
                   </h2>
                   <p className="text-lg text-gray-400 leading-relaxed max-w-lg">
                     Passionate about creating innovative digital solutions. I
@@ -113,16 +119,20 @@ const Hero = () => {
 
               {/* Action Buttons */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
+                transition={{
+                  duration: 0.4,
+                  delay: 0.2,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
                 className="flex flex-wrap gap-4"
               >
                 <motion.a
                   href="#about"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg"
+                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                 >
                   View My Work
                 </motion.a>
@@ -130,7 +140,7 @@ const Hero = () => {
                   href="#contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 border-2 border-purple-500 text-purple-300 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300"
+                  className="px-6 py-3 border-2 border-purple-500 text-purple-300 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                 >
                   Let's Connect
                 </motion.a>
@@ -138,9 +148,13 @@ const Hero = () => {
 
               {/* Achievement Stats */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{
+                  duration: 0.45,
+                  delay: 0.28,
+                  ease: [0.4, 0, 0.2, 1],
+                }}
                 className="grid grid-cols-4 gap-4 pt-4"
               >
                 {achievements.map((achievement, index) => (
@@ -148,8 +162,14 @@ const Hero = () => {
                     key={achievement.label}
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
-                    className="text-center"
+                    transition={{
+                      type: "spring",
+                      stiffness: 140,
+                      damping: 18,
+                      delay: 0.42 + index * 0.05,
+                    }}
+                    whileHover={{ scale: 1.04 }}
+                    className="text-center transition-transform duration-200"
                   >
                     <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
                       {achievement.number}
@@ -166,21 +186,42 @@ const Hero = () => {
             <div className="space-y-4 py-6">
               {/* Profile Card */}
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: 42 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-pink-900/40 backdrop-blur-xl border border-purple-500/30 rounded-2xl p-6 shadow-2xl"
+                transition={{
+                  duration: 0.55,
+                  delay: 0.25,
+                  ease: [0.45, 0, 0.2, 1],
+                }}
+                className="backdrop-blur-2xl rounded-2xl p-5 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
               >
                 {/* Profile Image */}
                 <div className="text-center mb-4">
                   <motion.div
-                    initial={{ scale: 0.8 }}
+                    initial={{ scale: 0.84 }}
                     animate={{ scale: 1 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                    whileHover={{ scale: 1.05 }}
-                    className="w-20 h-20 mx-auto bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 rounded-full flex items-center justify-center text-2xl font-bold text-white shadow-lg"
+                    transition={{
+                      duration: 0.45,
+                      delay: 0.4,
+                      ease: [0.45, 0, 0.2, 1],
+                    }}
+                    whileHover={{ scale: 1.04 }}
+                    className="relative mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 p-[3px] shadow-lg"
                   >
-                    DB
+                    <motion.img
+                      key="profile-photo"
+                      src={"/profile/main.png"}
+                      alt="Portrait of Daniel Bogale"
+                      loading="lazy"
+                      initial={{ opacity: 0, scale: 0.92 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{
+                        duration: 0.35,
+                        delay: 0.46,
+                        ease: [0.4, 0, 0.2, 1],
+                      }}
+                      className="h-full w-full rounded-full object-cover"
+                    />
                   </motion.div>
                 </div>
 
@@ -190,8 +231,12 @@ const Hero = () => {
                     href="mailto:dannybg090909@gmail.com"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.9 }}
-                    className="flex items-center space-x-2 p-2 bg-black/30 rounded-lg hover:bg-black/40 transition-all duration-300 text-sm"
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.45,
+                      ease: [0.45, 0, 0.2, 1],
+                    }}
+                    className="flex items-center space-x-2 p-2.5 rounded-xl border border-white/12 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                   >
                     <span>✉️</span>
                     <div>
@@ -206,8 +251,12 @@ const Hero = () => {
                     href="tel:+251917826840"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 1 }}
-                    className="flex items-center space-x-2 p-2 bg-black/30 rounded-lg hover:bg-black/40 transition-all duration-300 text-sm"
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.55,
+                      ease: [0.45, 0, 0.2, 1],
+                    }}
+                    className="flex items-center space-x-2 p-2.5 rounded-xl border border-white/12 bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                   >
                     <span>📱</span>
                     <div>
@@ -219,8 +268,12 @@ const Hero = () => {
                   <motion.div
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 1.1 }}
-                    className="flex items-center space-x-2 p-2 bg-black/30 rounded-lg text-sm"
+                    transition={{
+                      duration: 0.4,
+                      delay: 0.6,
+                      ease: [0.45, 0, 0.2, 1],
+                    }}
+                    className="flex items-center space-x-2 p-2.5 rounded-xl border border-white/12 bg-white/5 text-sm"
                   >
                     <span>📍</span>
                     <div>
@@ -235,10 +288,14 @@ const Hero = () => {
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ duration: 0.5, delay: 1.2 }}
+                  transition={{
+                    duration: 0.4,
+                    delay: 0.75,
+                    ease: [0.45, 0, 0.2, 1],
+                  }}
                   className="text-center"
                 >
-                  <div className="inline-flex items-center space-x-2 px-3 py-1 bg-gradient-to-r from-green-500/20 to-blue-500/20 rounded-full border border-green-500/30 text-xs">
+                  <div className="inline-flex items-center space-x-2 px-3 py-1 bg-emerald-400/10 rounded-full border border-emerald-300/30 text-xs">
                     <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <p className="text-green-300 font-medium">
                       Available for opportunities
@@ -248,10 +305,14 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, x: 50 }}
+                initial={{ opacity: 0, x: 42 }}
                 animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
-                className="bg-gradient-to-br from-purple-900/20 via-purple-800/10 to-pink-900/20 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-4"
+                transition={{
+                  duration: 0.55,
+                  delay: 0.35,
+                  ease: [0.45, 0, 0.2, 1],
+                }}
+                className=" backdrop-blur-2xl rounded-2xl p-5 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
               >
                 <h3 className="text-lg font-bold text-white mb-3 text-center">
                   Core Technologies
@@ -268,11 +329,12 @@ const Hero = () => {
                     {skills.map((skill, index) => (
                       <motion.div
                         key={skill.name}
-                        initial={{ opacity: 0, x: 30 }}
+                        initial={{ opacity: 0, x: 26 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{
-                          duration: 0.5,
-                          delay: 1.3 + index * 0.03,
+                          duration: 0.4,
+                          delay: 0.75 + index * 0.03,
+                          ease: [0.4, 0, 0.2, 1],
                         }}
                         className="space-y-1"
                       >
@@ -284,13 +346,14 @@ const Hero = () => {
                             {skill.level}%
                           </span>
                         </div>
-                        <div className="w-full bg-gray-700/50 rounded-full h-1.5">
+                        <div className="w-full bg-white/10 rounded-full h-1.5">
                           <motion.div
                             initial={{ width: 0 }}
                             animate={{ width: `${skill.level}%` }}
                             transition={{
-                              duration: 1,
-                              delay: 1.5 + index * 0.03,
+                              duration: 0.7,
+                              delay: 0.95 + index * 0.03,
+                              ease: [0.4, 0, 0.2, 1],
                             }}
                             className={`h-1.5 rounded-full bg-gradient-to-r ${skill.color}`}
                           />
@@ -313,7 +376,7 @@ const Hero = () => {
                         initial={false}
                         animate={{ y: [0, 5, 0] }}
                         transition={{
-                          duration: 2.2,
+                          duration: 1.6,
                           repeat: Infinity,
                           repeatType: "loop",
                           ease: [0.4, 0, 0.2, 1],
@@ -337,11 +400,11 @@ const Hero = () => {
                   )}
                   {showScrollUp && (
                     <motion.div
-                      className="absolute left-1/2 -translate-x-1/2 top-2 z-20"
+                      className="absolute left-1/2 -translate-x-1/2 top-2 z-10"
                       initial={false}
                       animate={{ y: [0, -5, 0] }}
                       transition={{
-                        duration: 2.2,
+                        duration: 1.6,
                         repeat: Infinity,
                         repeatType: "loop",
                         ease: [0.4, 0, 0.2, 1],
@@ -371,14 +434,14 @@ const Hero = () => {
 
       {/* Fixed Scroll Indicator */}
       <div className="xs:bottom-10 bottom-32 w-full flex justify-center items-center mt-4 py-4">
-        <a href="#about" className="z-20">
+        <a href="#about" className="z-10">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2 ">
             <motion.div
               animate={{
                 y: [0, 24, 0],
               }}
               transition={{
-                duration: 1.5,
+                duration: 1.2,
                 repeat: Number.POSITIVE_INFINITY,
                 repeatType: "loop",
               }}

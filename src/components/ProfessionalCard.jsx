@@ -32,7 +32,7 @@ const ProfessionalCard = () => {
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8, delay: 1.5 }}
-      className="fixed bottom-8 right-8 z-50"
+      className="fixed bottom-8 right-8 z-30 hidden sm:block"
     >
       <div className="flex flex-col space-y-3">
         {socialLinks.map((social) => (

@@ -15,6 +15,7 @@ const Navbar = () => {
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
         <Link
+          to="/"
           className="flex items-center gap-2"
           onClick={() => {
             setActive("");
@@ -22,11 +23,11 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="w-9 h-9 object-contain"></img>
-          <p className="text-white text-[18px] font-bold cursor-pointer flex">
+          <p className="text-white whitespace-nowrap text-[18px] font-bold cursor-pointer flex">
             daniel-bogale
           </p>
         </Link>
-        <ul className="list-none hidden sm:flex flex-row gap-10">
+        <ul className="list-none hidden sm:flex flex-row lg:gap-10 gap-2">
           {navLinks.map((link) => (
             <li
               key={link.id}
@@ -57,7 +58,7 @@ const Navbar = () => {
           ></div>
           {/* Slide-in menu */}
           <div
-            className={`fixed top-0 right-0 h-full w-3/4 max-w-xs bg-primary shadow-lg z-30 transform transition-transform duration-300 ${
+            className={`fixed top-0 z-40 right-0 h-full w-3/4 max-w-xs bg-primary shadow-lg  transform transition-transform duration-300 ${
               toggle ? "translate-x-0" : "translate-x-full"
             }`}
           >
@@ -73,7 +74,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <li
                   key={link.id}
-                  className={`$ {
+                  className={`${
                     active === link.title ? "text-white" : "text-secondary"
                   } font-poppins font-semibold text-lg cursor-pointer transition-colors duration-200`}
                   onClick={() => {

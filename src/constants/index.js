@@ -200,9 +200,7 @@ const testimonials = [
     name: "Amen Abatemam",
     designation: "Tech Lead",
     company: "Arifget",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E03AQEKuw9u3PT0Sw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1667717152979?e=1756944000&v=beta&t=Vc4aay2U0vACxCMBDWd7vsTWR-OVlUQlm0uf4489YJg",
-    // "https://www.linkedin.com/in/daniel-bogale/details/recommendations/?detailScreenTabIndex=0",
+    image: "/profile/amen.jpeg",
   },
   {
     testimonial:
@@ -210,8 +208,7 @@ const testimonials = [
     name: "Fitsum Admasu",
     designation: "Project Manager",
     company: "Heaven's Echo",
-    image:
-      "https://media.licdn.com/dms/image/v2/C4D03AQH96owcrssW9w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1662622889365?e=1756944000&v=beta&t=ze36u6H-Es-DJVd4MlQTSW7AxFiA7VRu0tpzXHcpfOE",
+    image: "/profile/fitsum.jpeg",
   },
   {
     testimonial:
@@ -219,8 +216,7 @@ const testimonials = [
     name: "Dereje Desta",
     designation: "Fullstack Developer",
     company: "safaricom ethiopia",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4E03AQHkXykdFsDMKQ/profile-displayphoto-shrink_800_800/B4EZY4kIN9G0Ac-/0/1744705717746?e=1756944000&v=beta&t=VhLFevK9uvbEGKaINtCeTTivPyK2K8MlBQpo2EFX5LI",
+    image: "/profile/dere.jpeg",
   },
   {
     testimonial:
@@ -230,7 +226,6 @@ const testimonials = [
     company: "Upwork Client - SaaS Dashboard",
     image:
       "https://fastly.picsum.photos/id/145/4288/2848.jpg?hmac=UkhcwQUE-vRBFXzDN1trCwWigpm7MXG5Bl5Ji103QG4",
-    // image: "https://www.upwork.com/freelancers/~01581342a756dd8477",
   },
   {
     testimonial:
@@ -301,10 +296,6 @@ const projects = [
       {
         name: "TypeScript",
         color: "yellow-text-gradient",
-      },
-      {
-        name: "Tailwind CSS",
-        color: "blue-text-gradient",
       },
     ],
     image: arifgetScreenshot, // Using existing screenshot for now

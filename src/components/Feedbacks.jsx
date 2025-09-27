@@ -16,7 +16,7 @@ const FeedbackCard = ({
   return (
     <motion.div
       variants={fadeIn("", "spring", index * 0.5, 0.75)}
-      className="bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full"
+      className="bg-black-200 p-12 rounded-3xl xs:w-[360px] w-full"
     >
       <div>
         <p className="text-white font-black text-[48px]">"</p>
@@ -35,7 +35,9 @@ const FeedbackCard = ({
         <img
           src={image}
           alt={`feedback-by-${name}`}
-          className="w-10 h-10 rounded-full object-cover "
+          loading="lazy"
+          className="w-12 h-12 rounded-full object-cover"
+          referrerPolicy="no-referrer"
         />
       </div>
     </motion.div>
@@ -47,9 +49,9 @@ const Feedbacks = () => {
       <div
         className={`${styles.padding} bg-tertiary rounded-2xl min-h-[300px]`}
       >
-        <motion.div variants={textVariant}>
+        <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>What others say</p>
-          <h2 className={styles.sectionHeadText}>Testimonial</h2>
+          <h2 className={styles.sectionHeadText}>Testimonials</h2>
         </motion.div>
       </div>
       <div className={`${styles.paddingX} -mt-20 pb-14 flex flex-wrap gap-7`}>
