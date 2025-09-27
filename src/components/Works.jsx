@@ -24,21 +24,21 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="group bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
-        <div className="absolute inset-0 flex justify-end m-3 card-img_hover z-20">
-          <div
-            onClick={() => window.open(source_code_link, "_blank")}
-            className="black-gradient w-8 h-8 p-1 rounded-full flex justify-center items-center cursor-pointer"
-          >
-            <img
-              src={redirectLink}
-              alt="source code"
-              className=" object-contain"
-            />
-          </div>
-        </div>
         <div className="relative w-full h-[230px]">
+          <div className="absolute inset-0 flex justify-end m-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+            <div
+              onClick={() => window.open(source_code_link, "_blank")}
+              className="black-gradient w-8 h-8 p-1 rounded-full flex justify-center items-center cursor-pointer"
+            >
+              <img
+                src={redirectLink}
+                alt="open link"
+                className="object-contain"
+              />
+            </div>
+          </div>
           <img
             src={image}
             alt="project_image"
