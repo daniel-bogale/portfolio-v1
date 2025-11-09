@@ -66,29 +66,59 @@ const Hero = () => {
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-pink-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         <div className={`${styles.paddingX} relative max-w-7xl mx-auto w-full`}>
-          <div className="grid lg:grid-cols-2 gap-8 items-center pt-20">
-            <div className="space-y-6">
-              <div>
+          <div className="grid md:grid-cols-2 gap-20 lg:gap-24 items-start pt-52 pb-24">
+            <div className="space-y-12">
+              <div className="space-y-10">
                 <motion.div
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-                  className="space-y-2"
+                  className="space-y-6"
                 >
-                  <p className="text-purple-400 text-lg font-medium flex items-center gap-2">
-                    <span>👋</span> Hello, I'm
-                  </p>
-                  <h1 className="text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
-                    Daniel
+                  {/* Greeting */}
+                  <motion.p
+                    className="text-gray-400 text-sm font-medium flex items-center gap-2.5"
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  >
                     <motion.span
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
+                      className="text-xl"
+                      animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
                       transition={{
-                        duration: 0.45,
-                        delay: 0.18,
+                        duration: 2.5,
+                        delay: 0.3,
+                        ease: "easeInOut",
+                      }}
+                    >
+                      👋
+                    </motion.span>
+                    <span className="tracking-wide">Hello, I'm</span>
+                  </motion.p>
+
+                  {/* Name */}
+                  <h1 className="text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <motion.span
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.5,
+                        delay: 0.15,
                         ease: [0.4, 0, 0.2, 1],
                       }}
-                      className="block text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 bg-clip-text pb-2 md:pb-3 lg:pb-4 leading-[1.3]"
+                      className="text-white"
+                    >
+                      Daniel
+                    </motion.span>
+                    <motion.span
+                      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                      animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        delay: 0.25,
+                        ease: [0.4, 0, 0.2, 1],
+                      }}
+                      className="text-transparent bg-gradient-to-r from-purple-400/70 via-pink-400/70 to-purple-400/70 bg-clip-text"
                     >
                       Bogale
                     </motion.span>
@@ -100,16 +130,25 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.4,
-                    delay: 0.1,
+                    duration: 0.5,
+                    delay: 0.35,
                     ease: [0.4, 0, 0.2, 1],
                   }}
-                  className="space-y-3"
+                  className="space-y-5"
                 >
-                  <h2 className="text-xl lg:text-2xl font-semibold text-gray-300">
-                    Senior Software Developer
-                  </h2>
-                  <p className="text-lg text-gray-400 leading-relaxed max-w-lg">
+                  {/* Role Badge */}
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-purple-400/15 backdrop-blur-sm">
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400/60 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-purple-400/80"></span>
+                    </span>
+                    <h2 className="text-sm font-medium text-gray-300">
+                      Senior Software Developer
+                    </h2>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-sm lg:text-base text-gray-400 leading-relaxed max-w-lg">
                     Passionate about creating innovative digital solutions. I
                     specialize in full-stack development, team leadership, and
                     mentoring developers.
@@ -130,19 +169,75 @@ const Hero = () => {
               >
                 <motion.a
                   href="#about"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                  whileHover={{
+                    scale: 1.03,
+                    boxShadow: "0 2px 8px -4px rgba(168, 85, 247, 0.05)",
+                  }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 17,
+                  }}
+                  className="group relative px-6 py-2.5 bg-gradient-to-r from-purple-500/80 via-purple-400/80 to-pink-500/80 text-white font-medium rounded-full overflow-hidden shadow-none hover:shadow-purple-500/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                 >
-                  View My Work
+                  {/* Animated shimmer effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></span>
+
+                  {/* Button content */}
+                  <span className="relative flex items-center gap-2 text-sm">
+                    <svg
+                      className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                    View My Work
+                  </span>
                 </motion.a>
+
                 <motion.a
                   href="#contact"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-6 py-3 border-2 border-purple-500 text-purple-300 font-semibold rounded-full hover:bg-purple-500 hover:text-white transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                  whileHover={{
+                    scale: 1.03,
+                    backgroundColor: "rgba(168, 85, 247, 0.1)",
+                    borderColor: "rgba(168, 85, 247, 0.6)",
+                  }}
+                  whileTap={{ scale: 0.97 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 17,
+                  }}
+                  className="group relative px-6 py-2.5 border-2 border-purple-400/60 text-purple-200/90 font-medium rounded-full overflow-hidden backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                 >
-                  Let's Connect
+                  {/* Animated gradient background on hover */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/5 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+                  {/* Button content */}
+                  <span className="relative flex items-center gap-2 text-sm">
+                    <svg
+                      className="w-4 h-4 group-hover:scale-110 transition-transform duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                      />
+                    </svg>
+                    Let's Connect
+                  </span>
                 </motion.a>
               </motion.div>
 
@@ -155,7 +250,7 @@ const Hero = () => {
                   delay: 0.28,
                   ease: [0.4, 0, 0.2, 1],
                 }}
-                className="grid grid-cols-4 gap-4 pt-4"
+                className="grid grid-cols-4 gap-10"
               >
                 {achievements.map((achievement, index) => (
                   <motion.div
@@ -183,7 +278,7 @@ const Hero = () => {
             </div>
 
             {/* Right Column - Compact Cards */}
-            <div className="space-y-4 py-6">
+            <div className="space-y-8 lg:pt-0">
               {/* Profile Card */}
               <motion.div
                 initial={{ opacity: 0, x: 42 }}
@@ -193,10 +288,10 @@ const Hero = () => {
                   delay: 0.25,
                   ease: [0.45, 0, 0.2, 1],
                 }}
-                className="backdrop-blur-2xl rounded-2xl p-5 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
+                className="backdrop-blur-md rounded-2xl p-8 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
               >
                 {/* Profile Image */}
-                <div className="text-center mb-4">
+                <div className="text-center mb-8">
                   <motion.div
                     initial={{ scale: 0.84 }}
                     animate={{ scale: 1 }}
@@ -206,7 +301,7 @@ const Hero = () => {
                       ease: [0.45, 0, 0.2, 1],
                     }}
                     whileHover={{ scale: 1.04 }}
-                    className="relative mx-auto h-20 w-20 rounded-full bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 p-[3px] shadow-lg"
+                    className="relative mx-auto h-20 w-20 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 p-[3px] shadow-lg"
                   >
                     <motion.img
                       key="profile-photo"
@@ -220,13 +315,13 @@ const Hero = () => {
                         delay: 0.46,
                         ease: [0.4, 0, 0.2, 1],
                       }}
-                      className="h-full w-full rounded-full object-cover"
+                      className="h-full w-full rounded-lg object-cover"
                     />
                   </motion.div>
                 </div>
 
                 {/* Contact Info */}
-                <div className="space-y-2 mb-4">
+                <div className="space-y-4 mb-8">
                   <motion.a
                     href="mailto:dannybg090909@gmail.com"
                     initial={{ opacity: 0, x: 20 }}
@@ -236,7 +331,7 @@ const Hero = () => {
                       delay: 0.45,
                       ease: [0.45, 0, 0.2, 1],
                     }}
-                    className="flex items-center space-x-2 p-2.5 rounded-xl border border-white/12 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                    className="flex items-center space-x-2 p-2.5 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                   >
                     <span>✉️</span>
                     <div>
@@ -256,7 +351,7 @@ const Hero = () => {
                       delay: 0.55,
                       ease: [0.45, 0, 0.2, 1],
                     }}
-                    className="flex items-center space-x-2 p-2.5 rounded-xl border border-white/12 bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                    className="flex items-center space-x-2 p-2.5 rounded-xl  bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                   >
                     <span>📱</span>
                     <div>
@@ -273,7 +368,7 @@ const Hero = () => {
                       delay: 0.6,
                       ease: [0.45, 0, 0.2, 1],
                     }}
-                    className="flex items-center space-x-2 p-2.5 rounded-xl border border-white/12 bg-white/5 text-sm"
+                    className="flex items-center space-x-2 p-2.5 rounded-xl  bg-white/5 text-sm"
                   >
                     <span>📍</span>
                     <div>
@@ -295,16 +390,22 @@ const Hero = () => {
                   }}
                   className="text-center"
                 >
-                  <div className="inline-flex items-center space-x-2 px-3 py-1 bg-emerald-400/10 rounded-full border border-emerald-300/30 text-xs">
-                    <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                    <p className="text-green-300 font-medium">
-                      Available for opportunities
-                    </p>
+                  <div className="flex items-center justify-center text-xs gap-1 border-emerald-300/30">
+                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border-emerald-300/30 border backdrop-blur-sm">
+                      <span className="relative flex h-3 w-3 items-center justify-center">
+                        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                        <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                      </span>
+
+                      <p className="text-green-300 font-medium">
+                        Available for opportunities
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               </motion.div>
 
-              <motion.div
+              {/* <motion.div
                 initial={{ opacity: 0, x: 42 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
@@ -312,7 +413,7 @@ const Hero = () => {
                   delay: 0.35,
                   ease: [0.45, 0, 0.2, 1],
                 }}
-                className=" backdrop-blur-2xl rounded-2xl p-5 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
+                className=" backdrop-blur-sm rounded-2xl p-5 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
               >
                 <h3 className="text-lg font-bold text-white mb-3 text-center">
                   Core Technologies
@@ -342,7 +443,7 @@ const Hero = () => {
                           <span className="text-gray-300 font-medium text-sm">
                             {skill.name}
                           </span>
-                          <span className="text-purple-400 text-xs">
+                          <span className="text-white text-xs">
                             {skill.level}%
                           </span>
                         </div>
@@ -361,7 +462,6 @@ const Hero = () => {
                       </motion.div>
                     ))}
                   </div>
-                  {/* Fade and arrow indicators */}
                   {showScrollFade && (
                     <>
                       <div
@@ -426,14 +526,14 @@ const Hero = () => {
                     </motion.div>
                   )}
                 </div>
-              </motion.div>
+              </motion.div> */}
             </div>
           </div>
         </div>
       </div>
 
       {/* Fixed Scroll Indicator */}
-      <div className="xs:bottom-10 bottom-32 w-full flex justify-center items-center mt-4 py-4">
+      <div className="xs:bottom-10 bottom-32 w-full flex justify-center items-center mt-16 py-8">
         <a href="#about" className="z-10">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2 ">
             <motion.div
