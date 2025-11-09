@@ -1,0 +1,82 @@
+import {
+  tripleBottomLine,
+  dasesa,
+  arifget,
+  academyTube,
+  Upwork,
+} from "../assets";
+
+export const experiences = [
+  {
+    title: "Senior Software Developer",
+    company_name: "Triple Bottom Line Enterprises - 3BL",
+    company_url: "https://www.3blenterprises.com/",
+    icon: tripleBottomLine,
+    iconBg: "#E6DEDD",
+    date: "Jan 2021 - Present",
+    points: [
+      "Collaborated with cross-functional teams to gather requirements and develop high-quality code.",
+      "Spearheaded the refactoring of legacy systems, reducing downtime by 15% and improving performance by 20%.",
+      "Implemented a CI/CD pipeline, decreasing deployment time by 40%.",
+      "Delivered a key feature adopted by 900+ internal users, enhancing workflow efficiency by 25%.",
+      "Managed code repositories, conducted code reviews, and resolved technical challenges.",
+    ],
+  },
+  {
+    title: "Full-Stack Developer and Technical Lead",
+    company_name: "The Hinds' Feet Technologies PLC",
+    company_url: "https://dasesa.co/",
+    icon: dasesa,
+    iconBg: "#1D1836",
+    date: "Mar 2022 - Nov 2024",
+    points: [
+      "Built the platform from the ground up, handling everything from system design to final implementation.",
+      "Led the technical team in designing, building, and scaling a platform used by over 100 researchers and 10,000 respondents.",
+      "Designed and developed a platform enabling dynamic surveys and robust analytics, facilitating the publication of 10+ research papers.",
+      "Architected scalable backend infrastructure using ReactJS, Node.js, and PostgreSQL ensuring seamless performance.",
+    ],
+  },
+  {
+    title: "Lead Front-End Developer",
+    company_name: "Arifget",
+    company_url: "https://main.arifget.com/",
+    icon: arifget,
+    iconBg: "#1D1836",
+    date: "Dec 2024 - Present",
+    points: [
+      "Manage and mentor the front-end team, ensuring best practices and timely project delivery.",
+      "Build responsive, high-performance web interfaces using modern technologies.",
+      "Work with designers, backend developers, and stakeholders to deliver user-centered solutions.",
+      "Lead development of an all-in-one digital marketplace empowering Ethiopian freelancers and entrepreneurs.",
+    ],
+  },
+  {
+    title: "Freelance Full-Stack Developer",
+    company_name: "Upwork",
+    company_url: "https://www.upwork.com/freelancers/~01581342a756dd8477",
+    icon: Upwork,
+    iconBg: "#1D1836",
+    date: "Jun 2025 - Present",
+    points: [
+      "Achieved Rising Talent badge and 100% Job Success Score.",
+      "Provided fast, reliable fixes for both frontend and backend issues.",
+      "Improved existing codebases using React, Next.js, Node.js, and Firebase.",
+      "Enhanced UI/UX for better usability and responsiveness across devices.",
+      "Communicated clearly with international clients to understand needs and deliver value quickly.",
+    ],
+  },
+  {
+    title: "Lead Web Developer",
+    company_name: "AcademyTube",
+    company_url: "https://academy-tube-web.vercel.app/",
+    icon: academyTube,
+    iconBg: "#1D1836",
+    date: "Nov 2024 - Jan 2025",
+    points: [
+      "Led the frontend team and developed AcademyTube from ground up.",
+      "Built and launched a free LMS used by 500+ students and 50 instructors, improving course delivery and engagement.",
+      "Implemented real-time course builder, student progress tracking, and personalized learning paths.",
+      "Developed admin dashboard for course approval, category management, and analytics.",
+    ],
+  },
+];
