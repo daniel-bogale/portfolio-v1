@@ -358,7 +358,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Daniel Bogale**
 
-- Website: [Your Portfolio URL]
+- Website: [danielbogale.com](https://danielbogale.com)
 - GitHub: [@daniel-bogale](https://github.com/daniel-bogale)
 - LinkedIn: [Daniel Bogale](https://linkedin.com/in/daniel-bogale)
 
