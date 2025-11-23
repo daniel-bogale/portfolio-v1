@@ -77,13 +77,13 @@ const Hero = () => {
                 >
                   {/* Greeting */}
                   <motion.p
-                    className="text-gray-400 text-sm font-medium flex items-center gap-2.5"
+                    className="text-gray-400 text-base font-medium flex items-center gap-3"
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}
                   >
                     <motion.span
-                      className="text-xl"
+                      className="text-2xl"
                       animate={{ rotate: [0, 14, -8, 14, -4, 10, 0] }}
                       transition={{
                         duration: 2.5,
@@ -97,7 +97,7 @@ const Hero = () => {
                   </motion.p>
 
                   {/* Name */}
-                  <h1 className="text-4xl lg:text-5xl font-bold leading-[1.1] tracking-tight flex flex-wrap items-center gap-x-3 gap-y-1">
+                  <h1 className="text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight flex flex-wrap items-center gap-x-3 gap-y-1">
                     <motion.span
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -137,21 +137,21 @@ const Hero = () => {
                   className="space-y-5"
                 >
                   {/* Role Badge */}
-                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-purple-400/15 backdrop-blur-sm">
-                    <span className="relative flex h-1.5 w-1.5">
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-purple-400/15 backdrop-blur-sm">
+                    <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400/60 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-purple-400/80"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-400/80"></span>
                     </span>
-                    <h2 className="text-sm font-medium text-gray-300">
+                    <h2 className="text-base font-medium text-gray-300">
                       Senior Software Developer
                     </h2>
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm lg:text-base text-gray-400 leading-relaxed max-w-lg">
-                    I build scalable web apps that help startups automate workflows.
-                    Specializing in full-stack development, team leadership, and
-                    mentoring developers.
+                  <p className="text-base lg:text-lg text-gray-400 leading-relaxed max-w-lg">
+                    I build scalable web apps that help startups automate
+                    workflows. Specializing in full-stack development, team
+                    leadership, and mentoring developers.
                   </p>
                 </motion.div>
               </div>
@@ -244,10 +244,10 @@ const Hero = () => {
                       index === 2 ? "hidden md:block" : ""
                     }`}
                   >
-                    <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
+                    <div className="text-3xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
                       {achievement.number}
                     </div>
-                    <div className="text-xs text-gray-400 mt-1">
+                    <div className="text-sm text-gray-400 mt-1.5">
                       {achievement.label}
                     </div>
                   </motion.div>
@@ -279,7 +279,7 @@ const Hero = () => {
                       ease: [0.45, 0, 0.2, 1],
                     }}
                     whileHover={{ scale: 1.04 }}
-                    className="relative mx-auto h-20 w-20 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600  shadow-lg"
+                    className="relative mx-auto h-24 w-24 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600  shadow-lg"
                   >
                     <motion.img
                       key="profile-photo"
@@ -309,9 +309,9 @@ const Hero = () => {
                       delay: 0.45,
                       ease: [0.45, 0, 0.2, 1],
                     }}
-                    className="flex items-center space-x-2 p-2.5 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                    className="flex items-center space-x-2.5 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                   >
-                    <span>✉️</span>
+                    <span className="text-lg">✉️</span>
                     <div>
                       <p className="text-gray-400 text-xs">EMAIL</p>
                       <p className="text-white font-medium">
@@ -329,9 +329,9 @@ const Hero = () => {
                       delay: 0.55,
                       ease: [0.45, 0, 0.2, 1],
                     }}
-                    className="flex items-center space-x-2 p-2.5 rounded-xl  bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                    className="flex items-center space-x-2.5 p-3 rounded-xl  bg-white/5 hover:bg-white/10 transition-all duration-300 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
                   >
-                    <span>📱</span>
+                    <span className="text-lg">📱</span>
                     <div>
                       <p className="text-gray-400 text-xs">PHONE</p>
                       <p className="text-white font-medium">+251917826840</p>
@@ -346,9 +346,9 @@ const Hero = () => {
                       delay: 0.6,
                       ease: [0.45, 0, 0.2, 1],
                     }}
-                    className="flex items-center space-x-2 p-2.5 rounded-xl  bg-white/5 text-sm"
+                    className="flex items-center space-x-2.5 p-3 rounded-xl  bg-white/5 text-sm"
                   >
-                    <span>📍</span>
+                    <span className="text-lg">📍</span>
                     <div>
                       <p className="text-gray-400 text-xs">LOCATION</p>
                       <p className="text-white font-medium">
@@ -368,8 +368,8 @@ const Hero = () => {
                   }}
                   className="text-center"
                 >
-                  <div className="flex items-center justify-center text-xs gap-1 border-emerald-300/30">
-                    <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-green-500/10 border-emerald-300/30 border backdrop-blur-sm">
+                  <div className="flex items-center justify-center text-sm gap-1 border-emerald-300/30">
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border-emerald-300/30 border backdrop-blur-sm">
                       <span className="relative flex h-3 w-3 items-center justify-center">
                         <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
                         <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
@@ -382,136 +382,13 @@ const Hero = () => {
                   </div>
                 </motion.div>
               </motion.div>
-
-              {/* <motion.div
-                initial={{ opacity: 0, x: 42 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.55,
-                  delay: 0.35,
-                  ease: [0.45, 0, 0.2, 1],
-                }}
-                className=" backdrop-blur-sm rounded-2xl p-5 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
-              >
-                <h3 className="text-lg font-bold text-white mb-3 text-center">
-                  Core Technologies
-                </h3>
-                <div className="relative">
-                  <div
-                    ref={skillsListRef}
-                    className="space-y-2 max-h-64 overflow-y-auto pr-2 custom-scrollbar"
-                    style={{
-                      scrollbarWidth: "none",
-                      scrollbarColor: "#a78bfa #2d2a4a",
-                    }}
-                  >
-                    {skills.map((skill, index) => (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, x: 26 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.4,
-                          delay: 0.75 + index * 0.03,
-                          ease: [0.4, 0, 0.2, 1],
-                        }}
-                        className="space-y-1"
-                      >
-                        <div className="flex justify-between items-center">
-                          <span className="text-gray-300 font-medium text-sm">
-                            {skill.name}
-                          </span>
-                          <span className="text-white text-xs">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="w-full bg-white/10 rounded-full h-1.5">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            animate={{ width: `${skill.level}%` }}
-                            transition={{
-                              duration: 0.7,
-                              delay: 0.95 + index * 0.03,
-                              ease: [0.4, 0, 0.2, 1],
-                            }}
-                            className={`h-1.5 rounded-full bg-gradient-to-r ${skill.color}`}
-                          />
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                  {showScrollFade && (
-                    <>
-                      <div
-                        className="pointer-events-none absolute left-0 right-0 bottom-0 h-10 z-10 backdrop:blur-md"
-                        style={{
-                          background:
-                            "linear-gradient(to top, rgba(24,16,32,0.1) 70%, rgba(24,16,32,0.0) 100%)",
-                        }}
-                      />
-                      <motion.div
-                        className="absolute left-1/2 -translate-x-1/2 bottom-2 z-20"
-                        initial={false}
-                        animate={{ y: [0, 5, 0] }}
-                        transition={{
-                          duration: 1.6,
-                          repeat: Infinity,
-                          repeatType: "loop",
-                          ease: [0.4, 0, 0.2, 1],
-                        }}
-                      >
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="#a78bfa"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="animate-none"
-                        >
-                          <polyline points="6 9 12 15 18 9" />
-                        </svg>
-                      </motion.div>
-                    </>
-                  )}
-                  {showScrollUp && (
-                    <motion.div
-                      className="absolute left-1/2 -translate-x-1/2 top-2 z-10"
-                      initial={false}
-                      animate={{ y: [0, -5, 0] }}
-                      transition={{
-                        duration: 1.6,
-                        repeat: Infinity,
-                        repeatType: "loop",
-                        ease: [0.4, 0, 0.2, 1],
-                      }}
-                    >
-                      <svg
-                        width="18"
-                        height="18"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="#a78bfa"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="animate-none"
-                      >
-                        <polyline points="6 15 12 9 18 15" />
-                      </svg>
-                    </motion.div>
-                  )}
-                </div>
-              </motion.div> */}
             </div>
           </div>
         </div>
       </div>
 
       {/* Fixed Scroll Indicator */}
-      <div className="xs:bottom-10 bottom-32 w-full flex justify-center items-center mt-16 py-8">
+      <div className="xs:bottom-10 bottom-32 w-full flex justify-center items-center my-5 py-8">
         <a href="#about" className="z-10">
           <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2 ">
             <motion.div
