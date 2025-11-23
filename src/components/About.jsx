@@ -6,7 +6,7 @@ import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 
-const ServiceCard = ({ index, title, icon }) => {
+const ServiceCard = ({ index, title, icon, description }) => {
   return (
     <Tilt className="xs:w-[250px] w-full">
       <motion.div
@@ -21,6 +21,7 @@ const ServiceCard = ({ index, title, icon }) => {
           <h3 className="text-white text-[18px] md:text-[20px] font-bold text-center">
             {title}
           </h3>
+          <p className="text-secondary text-[12px] text-center mt-2">{description}</p>
         </div>
       </motion.div>
     </Tilt>
@@ -37,9 +38,7 @@ const About = () => {
       <motion.p variants={fadeIn("", "", 0.1, 1)}>
         I'm a skilled software developer with experience in TypeScript and
         JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I'm a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Let's work together to bring your ideas to life!
+        Three.js. My journey started with a curiosity for how things work, which evolved into a passion for building scalable web applications. I value clean code, user-centric design, and continuous learning. Let's work together to bring your ideas to life!
       </motion.p>
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (

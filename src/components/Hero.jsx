@@ -149,8 +149,8 @@ const Hero = () => {
 
                   {/* Description */}
                   <p className="text-sm lg:text-base text-gray-400 leading-relaxed max-w-lg">
-                    Passionate about creating innovative digital solutions. I
-                    specialize in full-stack development, team leadership, and
+                    I build scalable web apps that help startups automate workflows.
+                    Specializing in full-stack development, team leadership, and
                     mentoring developers.
                   </p>
                 </motion.div>
@@ -199,7 +199,7 @@ const Hero = () => {
                   className="group relative px-6 py-2 md:px-8 md:py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-full overflow-hidden backdrop-blur-sm transition-colors duration-300 hover:bg-white/10 hover:border-white/20"
                 >
                   <span className="relative flex items-center gap-2">
-                    Let's Connect
+                    Work With Me
                     <svg
                       className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12"
                       fill="none"
