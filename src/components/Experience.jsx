@@ -180,7 +180,7 @@ const Experience = () => {
 
       <div
         ref={sectionRef}
-        className="mt-20 flex flex-col relative experience-section"
+        className="mt-20 flex flex-col relative experience-section overflow-hidden"
       >
         {/* Vertical progress bar that fills/unfills with scroll, shown only within Work section */}
         {inView && trackMetrics.height > 0 && (

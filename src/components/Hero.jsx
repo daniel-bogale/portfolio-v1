@@ -59,7 +59,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative w-full ">
+    <section className="relative w-full overflow-hidden">
       <div className="flex items-center justify-center">
         <div className="absolute inset-0">
           <div className="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
@@ -169,65 +169,42 @@ const Hero = () => {
               >
                 <motion.a
                   href="#about"
-                  whileHover={{
-                    scale: 1.03,
-                    boxShadow: "0 2px 8px -4px rgba(168, 85, 247, 0.05)",
-                  }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 17,
-                  }}
-                  className="group relative px-6 py-2.5 bg-gradient-to-r from-purple-500/80 via-purple-400/80 to-pink-500/80 text-white font-medium rounded-full overflow-hidden shadow-none hover:shadow-purple-500/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative px-6 py-2 md:px-8 md:py-3 bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-semibold rounded-full overflow-hidden shadow-lg shadow-indigo-500/20 transition-all duration-300 hover:shadow-indigo-500/40"
                 >
-                  {/* Animated shimmer effect */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></span>
-
-                  {/* Button content */}
-                  <span className="relative flex items-center gap-2 text-sm">
+                  <div className="absolute inset-0 bg-white/20 group-hover:translate-x-full transition-transform duration-500 ease-out -skew-x-12 -translate-x-full" />
+                  <span className="relative flex items-center gap-2">
+                    View My Work
                     <svg
-                      className="w-4 h-4 group-hover:rotate-12 transition-transform duration-300"
+                      className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
                       fill="none"
-                      stroke="currentColor"
                       viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
                       />
                     </svg>
-                    View My Work
                   </span>
                 </motion.a>
 
                 <motion.a
                   href="#contact"
-                  whileHover={{
-                    scale: 1.03,
-                    backgroundColor: "rgba(168, 85, 247, 0.1)",
-                    borderColor: "rgba(168, 85, 247, 0.6)",
-                  }}
-                  whileTap={{ scale: 0.97 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 17,
-                  }}
-                  className="group relative px-6 py-2.5 border-2 border-purple-400/60 text-purple-200/90 font-medium rounded-full overflow-hidden backdrop-blur-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-200/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#181020]"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative px-6 py-2 md:px-8 md:py-3 bg-white/5 border border-white/10 text-white font-semibold rounded-full overflow-hidden backdrop-blur-sm transition-colors duration-300 hover:bg-white/10 hover:border-white/20"
                 >
-                  {/* Animated gradient background on hover */}
-                  <span className="absolute inset-0 bg-gradient-to-r from-purple-600/0 via-purple-600/5 to-purple-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-
-                  {/* Button content */}
-                  <span className="relative flex items-center gap-2 text-sm">
+                  <span className="relative flex items-center gap-2">
+                    Let's Connect
                     <svg
-                      className="w-4 h-4 group-hover:scale-110 transition-transform duration-300"
+                      className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12"
                       fill="none"
-                      stroke="currentColor"
                       viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
                       <path
                         strokeLinecap="round"
@@ -236,7 +213,6 @@ const Hero = () => {
                         d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
                       />
                     </svg>
-                    Let's Connect
                   </span>
                 </motion.a>
               </motion.div>
@@ -250,7 +226,7 @@ const Hero = () => {
                   delay: 0.28,
                   ease: [0.4, 0, 0.2, 1],
                 }}
-                className="grid grid-cols-4 gap-10"
+                className="grid grid-cols-2 xs:grid-cols-3 md:grid-cols-4 gap-4 md:gap-10"
               >
                 {achievements.map((achievement, index) => (
                   <motion.div
@@ -264,7 +240,9 @@ const Hero = () => {
                       delay: 0.42 + index * 0.05,
                     }}
                     whileHover={{ scale: 1.04 }}
-                    className="text-center transition-transform duration-200"
+                    className={`text-center transition-transform duration-200 ${
+                      index === 2 ? "hidden md:block" : ""
+                    }`}
                   >
                     <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text">
                       {achievement.number}
@@ -288,7 +266,7 @@ const Hero = () => {
                   delay: 0.25,
                   ease: [0.45, 0, 0.2, 1],
                 }}
-                className="backdrop-blur-md rounded-2xl p-8 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
+                className="backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-[0_16px_40px_-30px_rgba(168,139,250,0.5)] transition-transform duration-500 hover:-translate-y-1 hover:shadow-[0_22px_52px_-34px_rgba(168,139,250,0.65)]"
               >
                 {/* Profile Image */}
                 <div className="text-center mb-8">
@@ -301,7 +279,7 @@ const Hero = () => {
                       ease: [0.45, 0, 0.2, 1],
                     }}
                     whileHover={{ scale: 1.04 }}
-                    className="relative mx-auto h-20 w-20 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600 p-[3px] shadow-lg"
+                    className="relative mx-auto h-20 w-20 rounded-lg bg-gradient-to-br from-purple-500 via-pink-500 to-purple-600  shadow-lg"
                   >
                     <motion.img
                       key="profile-photo"

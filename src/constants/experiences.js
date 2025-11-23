@@ -4,9 +4,23 @@ import {
   arifget,
   academyTube,
   Upwork,
+  ay_automate,
 } from "../assets";
 
 export const experiences = [
+  {
+    title: "AI & Full Stack Engineer",
+    company_name: "AyAutomate",
+    company_url: "https://www.ayautomate.com/",
+    icon: ay_automate,
+    iconBg: "#1D1836",
+    date: "Present",
+    points: [
+      "Build AI-powered apps and automations, delivering full-stack solutions that clients love.",
+      "Directly report to the CEO and clients, managing the entire lifecycle from PRD design to delivery.",
+      "Demonstrated immediate impact in the first month, securing 3 additional projects through high-quality delivery.",
+    ],
+  },
   {
     title: "Senior Software Developer",
     company_name: "Triple Bottom Line Enterprises - 3BL",

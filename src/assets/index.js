@@ -41,6 +41,7 @@ import dasesa from "./company/dasesa.png";
 import arifget from "./company/arifget.png";
 import academyTube from "./company/academyTube.png";
 import Upwork from "./company/upwork.svg";
+import ay_automate from "./company/ay_automate.png";
 
 // Project Screenshots
 import dasesaScreenshot from "./projects/dasesaScreenshot.png";
@@ -90,6 +91,7 @@ export {
   arifget,
   academyTube,
   Upwork,
+  ay_automate,
 
   // Projects
   dasesaScreenshot,
